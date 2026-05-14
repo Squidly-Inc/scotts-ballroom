@@ -53,7 +53,7 @@ const testimonials = [
   transparentHeader={true}
 >
   <!-- HERO -->
-  <section class="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
+  <section class="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-navy-deep">
     <video
       class="absolute inset-0 w-full h-full object-cover"
       src={heroVideo}
@@ -61,7 +61,7 @@ const testimonials = [
       muted
       loop
       playsinline
-      poster={heroPoster}
+      preload="auto"
     ></video>
     <div class="absolute inset-0 bg-navy-deep/35"></div>
     <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-5 sm:px-8">
