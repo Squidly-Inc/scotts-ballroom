@@ -1,0 +1,186 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const url = (p: string) => `${base}${p}`;
+
+const spaces = [
+  {
+    id: "pacific",
+    name: "Pacific Ballroom",
+    sqft: "3,200",
+    seated: 350,
+    standing: 500,
+    type: "Indoor · Main Ballroom",
+    body: "The flagship room — a wide-open ballroom with floor-to-ceiling windows facing west. Soft lighting on dimmers, polished concrete floors, and a sound system tuned for everything from string quartets to DJs.",
+    perfectFor: ["Wedding ceremonies & receptions", "Galas", "Corporate keynotes"],
+    img: "https://static.wixstatic.com/media/56773e_e8eb6ec8755447599adca9d512c222c4~mv2.jpg/v1/fill/w_1200,h_800/JK8A0325-1-6-scaled_edited.jpg",
+  },
+  {
+    id: "foyer",
+    name: "Ocean Foyer",
+    sqft: "1,400",
+    seated: 80,
+    standing: 200,
+    type: "Indoor · Pre-function & Cocktail",
+    body: "The arrival space and natural cocktail-hour flow. Connects directly to the Pacific Ballroom and the Harborview Terrace, so guests circulate seamlessly between indoor and outdoor zones.",
+    perfectFor: ["Cocktail receptions", "Pre-event mingling", "Stand-alone networking"],
+    img: "https://static.wixstatic.com/media/56773e_b9fbc93c14bd4b5b8ff904dfd944a196~mv2.jpg/v1/fill/w_1200,h_800/458690613_1500747403903587_2287569386930.jpg",
+  },
+  {
+    id: "harborview",
+    name: "Harborview Terrace",
+    sqft: "1,100",
+    seated: 60,
+    standing: 120,
+    type: "Outdoor · Open-Air Terrace",
+    body: "A wraparound outdoor terrace overlooking downtown San Jose. String lights, planters, and a built-in service bar. Best at golden hour.",
+    perfectFor: ["Cocktail receptions", "Outdoor ceremonies", "Rooftop dinners"],
+    img: "https://static.wixstatic.com/media/56773e_2920d977ee68477c9c56ae32b1903e29~mv2.jpg/v1/fill/w_1200,h_800/seafood%20paella_edited.jpg",
+  },
+  {
+    id: "bayview",
+    name: "Bayview Terrace",
+    sqft: "1,100",
+    seated: 60,
+    standing: 120,
+    type: "Outdoor · Skyline Terrace",
+    body: "The east-facing companion terrace with views over the Rotunda and toward the bay. Quieter, more intimate, often used for ceremony backdrops or VIP receptions.",
+    perfectFor: ["Wedding ceremonies", "VIP cocktail spaces", "Private toasts"],
+    img: "https://static.wixstatic.com/media/56773e_e8eb6ec8755447599adca9d512c222c4~mv2.jpg/v1/fill/w_1200,h_800/JK8A0325-1-6-scaled_edited.jpg",
+  },
+];
+
+const compare = [
+  ["", "Sq Ft", "Seated", "Standing", "Setting"],
+  ["Pacific Ballroom", "3,200", "350", "500", "Indoor"],
+  ["Ocean Foyer", "1,400", "80", "200", "Indoor"],
+  ["Harborview Terrace", "1,100", "60", "120", "Outdoor (West)"],
+  ["Bayview Terrace", "1,100", "60", "120", "Outdoor (East)"],
+  ["Full Floor (all four)", "6,800", "550", "700", "Indoor + Outdoor"],
+];
+---
+
+<Layout title="Spaces | Scott's Ballroom">
+  <section class="bg-navy-deep pt-32 pb-12 sm:pb-16">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="text-gold uppercase tracking-[0.3em] text-xs mb-4">Spaces</p>
+      <h1 class="font-display text-4xl sm:text-6xl text-cream mb-5 leading-tight">
+        One floor.<br/>
+        <span class="italic text-gold">Four distinct rooms.</span>
+      </h1>
+      <p class="text-cream/75 max-w-2xl mx-auto leading-relaxed">
+        Rent one space, several, or the entire 7th floor. Spaces flow into one
+        another — ceremony in one, cocktails on another, dinner in a third.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-ink-soft sticky top-[68px] z-40 border-t border-cream/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 overflow-x-auto">
+      <div class="flex gap-1 py-2">
+        {spaces.map((s) => (
+          <a href={`#${s.id}`} class="text-cream/70 hover:text-gold text-xs uppercase tracking-widest font-semibold px-4 py-3 whitespace-nowrap transition">
+            {s.name}
+          </a>
+        ))}
+        <a href="#compare" class="text-cream/70 hover:text-gold text-xs uppercase tracking-widest font-semibold px-4 py-3 whitespace-nowrap transition">
+          Compare
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-cream-soft py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 space-y-20 sm:space-y-28">
+      {spaces.map((s, i) => (
+        <article id={s.id} class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+          <div class={i % 2 === 1 ? "lg:order-2" : ""}>
+            <div class="aspect-[4/3] overflow-hidden shadow-2xl bg-ink/10">
+              <img src={s.img} alt={s.name} class="w-full h-full object-cover" />
+            </div>
+          </div>
+
+          <div class={i % 2 === 1 ? "lg:order-1" : ""}>
+            <p class="text-gold-deep uppercase tracking-[0.3em] text-xs mb-3">{s.type}</p>
+            <h2 class="font-display text-3xl sm:text-5xl text-ink mb-5 leading-tight">{s.name}</h2>
+
+            <div class="grid grid-cols-3 gap-4 sm:gap-6 mb-6 pb-6 border-b border-ink/10">
+              <div>
+                <p class="text-xs uppercase tracking-widest text-navy font-semibold mb-1">Square Feet</p>
+                <p class="font-display text-2xl text-ink">{s.sqft}</p>
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-widest text-navy font-semibold mb-1">Seated</p>
+                <p class="font-display text-2xl text-ink">{s.seated}</p>
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-widest text-navy font-semibold mb-1">Standing</p>
+                <p class="font-display text-2xl text-ink">{s.standing}</p>
+              </div>
+            </div>
+
+            <p class="text-ink/75 leading-relaxed mb-6">{s.body}</p>
+
+            <div class="mb-8">
+              <p class="text-xs uppercase tracking-widest text-navy font-semibold mb-3">Perfect for</p>
+              <ul class="flex flex-wrap gap-2">
+                {s.perfectFor.map((tag) => (
+                  <li class="text-sm bg-navy-pale text-navy-deep px-3 py-1.5">{tag}</li>
+                ))}
+              </ul>
+            </div>
+
+            <a href={url("/contact")} class="inline-block bg-navy-deep text-cream text-xs font-semibold uppercase tracking-widest px-7 py-3 hover:bg-ink transition">
+              Inquire About {s.name} →
+            </a>
+          </div>
+        </article>
+      ))}
+
+      <!-- COMPARE -->
+      <div id="compare" class="pt-8 sm:pt-12">
+        <div class="text-center mb-12">
+          <p class="text-navy uppercase tracking-[0.3em] text-xs mb-4">Side by side</p>
+          <h2 class="font-display text-3xl sm:text-5xl text-ink leading-tight">Compare spaces.</h2>
+        </div>
+        <div class="overflow-x-auto bg-paper border border-line shadow-lg">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-navy-deep text-cream">
+                {compare[0].map((h) => (
+                  <th class="px-4 sm:px-6 py-4 text-left text-xs uppercase tracking-widest font-semibold whitespace-nowrap">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {compare.slice(1).map((row, i) => (
+                <tr class:list={["border-t border-line", i === compare.length - 2 && "bg-cream-soft font-semibold"]}>
+                  {row.map((cell, j) => (
+                    <td class:list={["px-4 sm:px-6 py-4 whitespace-nowrap", j === 0 ? "font-display text-ink" : "text-ink/80 tabular-nums"]}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-center text-ink/50 text-sm italic mt-6">
+          Need exact dimensions and floor plans? <a href={url("/contact")} class="text-navy underline hover:text-gold-deep">Contact the team</a> — we'll send the full prospectus.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-navy-deep py-20 sm:py-28 text-center text-cream">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8">
+      <h2 class="font-display text-3xl sm:text-4xl mb-6 leading-tight">Ready to walk the floor?</h2>
+      <p class="text-cream/85 leading-relaxed mb-10">
+        Schedule an in-person tour with our events team. We'll walk every room,
+        answer questions, and share the full preferred-vendor list.
+      </p>
+      <a href={url("/contact")} class="inline-block bg-gold text-navy-deep text-sm font-semibold uppercase tracking-widest px-10 py-4 hover:bg-cream transition">
+        Schedule a Tour
+      </a>
+    </div>
+  </section>
+</Layout>

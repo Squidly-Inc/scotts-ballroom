@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const url = (p: string) => `${base}${p}`;
+---
+
+<Layout title="About | Scott's Ballroom">
+  <section class="bg-navy-deep pt-32 pb-12 sm:pb-16">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="text-gold uppercase tracking-[0.3em] text-xs mb-4">About</p>
+      <h1 class="font-display text-4xl sm:text-6xl text-cream mb-5 leading-tight">
+        The Scott's standard,<br/>
+        <span class="italic text-gold">elevated.</span>
+      </h1>
+    </div>
+  </section>
+
+  <section class="bg-cream-soft py-20 sm:py-28">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8 space-y-8 text-ink/80 leading-relaxed text-lg">
+      <p>
+        Scott's Ballroom is the event venue arm of Scott's Seafood San Jose —
+        forty years of hospitality, expanded to fit a wedding for 300 or a
+        gala for 700.
+      </p>
+      <p>
+        Occupying the entire 7th floor of the <strong class="text-ink">Rotary Summit Center</strong>
+        in downtown San Jose, the Ballroom offers 6,800 square feet of flexible
+        event space across four distinct rooms — an indoor ballroom, an indoor
+        foyer, and two outdoor terraces with full panoramic views of the
+        San Jose skyline.
+      </p>
+      <p>
+        Every event runs under one roof: in-house culinary, beverage program,
+        event coordination, A/V, and service staff. Our team handles the
+        logistics so you handle the moment.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-paper py-20 sm:py-28 border-y border-line">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8">
+      <div class="text-center mb-12">
+        <p class="text-navy uppercase tracking-[0.3em] text-xs mb-4">What's Included</p>
+        <h2 class="font-display text-3xl sm:text-5xl text-ink leading-tight">
+          Every event includes.
+        </h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8 text-ink/80">
+        <div class="flex gap-4 items-start"><span class="font-display text-gold-deep text-2xl leading-none">·</span><p>Tables (high and low)</p></div>
+        <div class="flex gap-4 items-start"><span class="font-display text-gold-deep text-2xl leading-none">·</span><p>Chairs</p></div>
+        <div class="flex gap-4 items-start"><span class="font-display text-gold-deep text-2xl leading-none">·</span><p>Dedicated event coordinator</p></div>
+        <div class="flex gap-4 items-start"><span class="font-display text-gold-deep text-2xl leading-none">·</span><p>Full staffing (FOH & BOH)</p></div>
+        <div class="flex gap-4 items-start"><span class="font-display text-gold-deep text-2xl leading-none">·</span><p>In-house culinary team</p></div>
+        <div class="flex gap-4 items-start"><span class="font-display text-gold-deep text-2xl leading-none">·</span><p>Standard A/V setup</p></div>
+      </div>
+      <p class="text-center mt-12 text-ink/60 italic">
+        Add-ons available: florals, custom linens, dance floor, DJ, lighting upgrades. Preferred vendor partners on every category.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-navy-deep py-20 sm:py-28 text-center text-cream">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8">
+      <p class="text-gold uppercase tracking-[0.3em] text-xs mb-4">Looking Smaller?</p>
+      <h2 class="font-display text-3xl sm:text-4xl mb-6 leading-tight">
+        Want a more intimate space?
+      </h2>
+      <p class="text-cream/85 leading-relaxed mb-10">
+        Scott's Seafood San Jose, our downtown restaurant, offers five private
+        dining rooms from a 10-seat Chef's Table up to a 250-guest restaurant buyout.
+      </p>
+      <a href="https://squidly-inc.github.io/scotts-mockup/private-dining" class="inline-block border border-gold text-gold text-xs font-semibold uppercase tracking-widest px-8 py-3 hover:bg-gold hover:text-navy-deep transition">
+        Restaurant Private Dining →
+      </a>
+    </div>
+  </section>
+</Layout>

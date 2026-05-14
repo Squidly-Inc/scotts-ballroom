@@ -1,0 +1,178 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const url = (p: string) => `${base}${p}`;
+
+const heroVideo = "https://video.wixstatic.com/video/11062b_e47a584dab7d466e8d868d3c59d86da4/1080p/mp4/file.mp4";
+const heroPoster = "https://static.wixstatic.com/media/a60a26_4153dd667be446578ab4d4461bb8f810f000.jpg";
+
+const eventTypes = [
+  {
+    title: "Weddings",
+    body: "Ballroom ceremonies, terrace cocktail hours, and skyline receptions.",
+    href: url("/events") + "#weddings",
+    img: "https://static.wixstatic.com/media/56773e_e8eb6ec8755447599adca9d512c222c4~mv2.jpg/v1/fill/w_892,h_670,al_c,q_85/JK8A0325-1-6-scaled_edited.jpg",
+  },
+  {
+    title: "Corporate",
+    body: "Galas, conferences, holiday parties — fully serviced for up to 700.",
+    href: url("/events") + "#corporate",
+    img: "https://static.wixstatic.com/media/56773e_b9fbc93c14bd4b5b8ff904dfd944a196~mv2.jpg/v1/fill/w_892,h_670,al_c,q_85/458690613_1500747403903587_2287569386930.jpg",
+  },
+  {
+    title: "Social",
+    body: "Milestone birthdays, anniversaries, nonprofits, fundraisers, and galas.",
+    href: url("/events") + "#social",
+    img: "https://static.wixstatic.com/media/56773e_2920d977ee68477c9c56ae32b1903e29~mv2.jpg/v1/fill/w_892,h_670,al_c,q_85/seafood%20paella_edited.jpg",
+  },
+];
+
+const testimonials = [
+  {
+    quote: "Scott's Ballroom turned our wedding into something we'll talk about for years. The view, the food, the team — flawless.",
+    name: "Emily & James Taylor",
+    event: "Wedding · 220 guests",
+  },
+  {
+    quote: "Our corporate gala needed to feel premium without feeling stuffy. Scott's nailed it. Catering was excellent, AV was seamless.",
+    name: "Michael Johnson",
+    event: "Corporate Gala · 450 guests",
+  },
+  {
+    quote: "The Bayview Terrace at sunset is the most photographed cocktail hour I've ever planned. Bookings are filling up — start early.",
+    name: "Sophia Martinez",
+    event: "Nonprofit Fundraiser · 180 guests",
+  },
+];
+---
+
+<Layout
+  title="Scott's Ballroom | Premier Event Venue in Downtown San Jose"
+  description="6,800 sq ft event venue at the Rotary Summit Center. Weddings, corporate galas, and social events above the San Jose skyline."
+  transparentHeader={true}
+>
+  <!-- HERO -->
+  <section class="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
+    <video
+      class="absolute inset-0 w-full h-full object-cover"
+      src={heroVideo}
+      autoplay
+      muted
+      loop
+      playsinline
+      poster={heroPoster}
+    ></video>
+    <div class="absolute inset-0 bg-navy-deep/65"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-5 sm:px-8">
+      <p class="fade-up text-gold uppercase tracking-[0.3em] text-xs sm:text-sm mb-4 sm:mb-6">
+        The Rotary Summit Center · 7th Floor
+      </p>
+      <h1 class="fade-up-delay-1 text-cream font-display text-[1.625rem] leading-[1.2] sm:text-6xl lg:text-7xl sm:leading-[1.05] max-w-3xl tracking-tight">
+        Your story begins<br/>
+        <span class="italic text-gold">above the skyline.</span>
+      </h1>
+      <p class="fade-up-delay-2 text-cream/85 mt-5 sm:mt-6 max-w-xl text-sm sm:text-lg leading-relaxed px-2">
+        6,800 sq ft of elevated event space. Sweeping San Jose views.
+        From intimate gatherings of 50 to galas of 700.
+      </p>
+      <div class="fade-up-delay-2 mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+        <a
+          href={url("/contact")}
+          class="bg-gold text-navy-deep text-sm font-semibold uppercase tracking-widest px-8 py-4 hover:bg-cream transition text-center"
+        >
+          Inquire Now
+        </a>
+        <a
+          href={url("/spaces")}
+          class="border border-cream/40 text-cream text-sm font-semibold uppercase tracking-widest px-8 py-4 hover:border-gold hover:text-gold transition text-center"
+        >
+          Explore Spaces
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="bg-cream-soft py-20 sm:py-28">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+      <p class="text-navy uppercase tracking-[0.3em] text-xs mb-6">Discover Your Moment</p>
+      <h2 class="font-display text-3xl sm:text-5xl text-ink mb-8 leading-tight">
+        One venue.<br/>
+        <span class="italic text-gold-deep">Four distinct spaces.</span>
+      </h2>
+      <p class="text-ink/75 leading-relaxed text-lg max-w-2xl mx-auto">
+        Scott's Ballroom occupies the entire 7th floor of the Rotary Summit Center
+        in downtown San Jose. Rent the whole floor or one room — every event
+        gets the full Scott's culinary and hospitality standard.
+      </p>
+    </div>
+  </section>
+
+  <!-- EVENT TYPES -->
+  <section class="bg-paper py-20 sm:py-28 border-y border-line">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center mb-14 sm:mb-20">
+        <p class="text-navy uppercase tracking-[0.3em] text-xs mb-4">Plan</p>
+        <h2 class="font-display text-3xl sm:text-5xl text-ink">For every occasion.</h2>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3">
+        {eventTypes.map((e) => (
+          <a href={e.href} class="group block bg-cream-soft overflow-hidden hover:shadow-2xl transition">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src={e.img} alt={e.title} class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6 sm:p-8">
+              <h3 class="font-display text-2xl text-ink mb-3">{e.title}</h3>
+              <p class="text-ink/70 leading-relaxed mb-5 text-sm">{e.body}</p>
+              <span class="text-navy text-xs uppercase tracking-widest font-semibold border-b border-navy pb-1 group-hover:text-gold-deep group-hover:border-gold-deep">
+                Learn More →
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="bg-navy-deep py-20 sm:py-28 text-cream">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8">
+      <div class="text-center mb-14">
+        <p class="text-gold uppercase tracking-[0.3em] text-xs mb-4">From Our Hosts</p>
+        <h2 class="font-display text-3xl sm:text-5xl">Words that echo.</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 sm:gap-10">
+        {testimonials.map((t) => (
+          <blockquote class="border-l-2 border-gold pl-6">
+            <p class="font-display text-lg italic text-cream/95 leading-relaxed mb-5">"{t.quote}"</p>
+            <footer class="text-sm">
+              <p class="text-cream font-semibold">{t.name}</p>
+              <p class="text-cream/60">{t.event}</p>
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-cream-soft py-20 sm:py-28 text-center">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8">
+      <p class="text-navy uppercase tracking-[0.3em] text-xs mb-4">Ready?</p>
+      <h2 class="font-display text-3xl sm:text-5xl text-ink mb-6 leading-tight">
+        Let's plan your event.
+      </h2>
+      <p class="text-ink/70 leading-relaxed mb-10">
+        Our events team responds within one business day with availability,
+        pricing, and a custom proposal.
+      </p>
+      <a
+        href={url("/contact")}
+        class="inline-block bg-navy-deep text-cream text-sm font-semibold uppercase tracking-widest px-10 py-4 hover:bg-ink transition"
+      >
+        Start the Conversation
+      </a>
+    </div>
+  </section>
+</Layout>

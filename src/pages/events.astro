@@ -1,0 +1,118 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const url = (p: string) => `${base}${p}`;
+
+const types = [
+  {
+    id: "weddings",
+    title: "Weddings",
+    body: "Ceremony, cocktail hour, and reception — all on one floor with skyline views. Coordinate florals, custom linens, and DJ through our preferred vendor list, or bring your own.",
+    examples: ["Indoor ceremonies in Pacific Ballroom", "Outdoor ceremonies on Bayview Terrace", "Cocktail hours on Harborview Terrace", "Receptions up to 350 seated"],
+    img: "https://static.wixstatic.com/media/56773e_e8eb6ec8755447599adca9d512c222c4~mv2.jpg/v1/fill/w_1200,h_800/JK8A0325-1-6-scaled_edited.jpg",
+  },
+  {
+    id: "corporate",
+    title: "Corporate Events",
+    body: "Conferences, holiday parties, product launches, board dinners, and galas. Full A/V, dedicated event coordinator, and white-glove service.",
+    examples: ["Keynote conferences up to 500", "Annual galas & holiday parties", "Product launches & client dinners", "Multi-day off-sites"],
+    img: "https://static.wixstatic.com/media/56773e_b9fbc93c14bd4b5b8ff904dfd944a196~mv2.jpg/v1/fill/w_1200,h_800/458690613_1500747403903587_2287569386930.jpg",
+  },
+  {
+    id: "social",
+    title: "Social & Nonprofit",
+    body: "Milestone birthdays, anniversaries, nonprofit fundraisers, fundraising galas, and community events. Flexible packages, generous nonprofit pricing.",
+    examples: ["Milestone birthdays", "Anniversary parties", "Quinceañeras", "Nonprofit galas & auctions"],
+    img: "https://static.wixstatic.com/media/56773e_2920d977ee68477c9c56ae32b1903e29~mv2.jpg/v1/fill/w_1200,h_800/seafood%20paella_edited.jpg",
+  },
+];
+
+const facts = [
+  { label: "Parking", value: "On-site parking garage with validation. Valet available." },
+  { label: "Capacity", value: "Up to 700 standing across the full floor." },
+  { label: "Catering", value: "In-house. Scott's Seafood culinary team handles every plate." },
+  { label: "Bar", value: "Full bar service, custom beverage packages." },
+  { label: "Add-Ons", value: "Florals, custom linens, DJ, A/V upgrades, dance floor — all via preferred vendors." },
+  { label: "Coordination", value: "Dedicated event coordinator included with every booking." },
+];
+---
+
+<Layout title="Event Types | Scott's Ballroom">
+  <section class="bg-navy-deep pt-32 pb-12 sm:pb-16">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="text-gold uppercase tracking-[0.3em] text-xs mb-4">Events</p>
+      <h1 class="font-display text-4xl sm:text-6xl text-cream mb-5 leading-tight">
+        Built for every kind<br/>of gathering.
+      </h1>
+      <p class="text-cream/75 max-w-2xl mx-auto leading-relaxed">
+        Weddings to galas to corporate retreats — one venue, four spaces, and
+        a team that handles every detail.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-cream-soft py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 space-y-20">
+      {types.map((t, i) => (
+        <article id={t.id} class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+          <div class={i % 2 === 1 ? "lg:order-2" : ""}>
+            <div class="aspect-[4/3] overflow-hidden shadow-2xl bg-ink/10">
+              <img src={t.img} alt={t.title} class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class={i % 2 === 1 ? "lg:order-1" : ""}>
+            <h2 class="font-display text-3xl sm:text-5xl text-ink mb-5 leading-tight">{t.title}</h2>
+            <p class="text-ink/75 leading-relaxed mb-6 text-lg">{t.body}</p>
+            <ul class="space-y-2 mb-8">
+              {t.examples.map((e) => (
+                <li class="flex gap-3 items-start text-ink/80"><span class="text-gold-deep font-bold">·</span>{e}</li>
+              ))}
+            </ul>
+            <a href={url("/contact")} class="inline-block bg-navy-deep text-cream text-xs font-semibold uppercase tracking-widest px-7 py-3 hover:bg-ink transition">
+              Inquire About {t.title} →
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-paper py-20 sm:py-28 border-y border-line">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8">
+      <div class="text-center mb-12">
+        <p class="text-navy uppercase tracking-[0.3em] text-xs mb-4">The Details</p>
+        <h2 class="font-display text-3xl sm:text-5xl text-ink leading-tight">Things to know.</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-x-12 gap-y-8">
+        {facts.map((f) => (
+          <div>
+            <h3 class="text-xs uppercase tracking-widest text-navy font-semibold mb-2">{f.label}</h3>
+            <p class="text-ink/80 leading-relaxed">{f.value}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-navy-deep py-20 sm:py-28 text-center text-cream">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8">
+      <p class="text-gold uppercase tracking-[0.3em] text-xs mb-4">Need Something Different?</p>
+      <h2 class="font-display text-3xl sm:text-4xl mb-6 leading-tight">
+        Smaller party? Off-site catering?
+      </h2>
+      <p class="text-cream/80 leading-relaxed mb-10 max-w-xl mx-auto">
+        Scott's Seafood San Jose hosts private dining for 10 to 250 guests.
+        Scott's Provisions delivers catering to the venue of your choice.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+        <a href="https://squidly-inc.github.io/scotts-mockup/private-dining" class="border border-gold text-gold text-xs font-semibold uppercase tracking-widest px-8 py-3 hover:bg-gold hover:text-navy-deep transition">
+          Restaurant Private Dining
+        </a>
+        <a href="https://squidly-inc.github.io/scotts-provisions/" class="border border-gold text-gold text-xs font-semibold uppercase tracking-widest px-8 py-3 hover:bg-gold hover:text-navy-deep transition">
+          Off-Site Catering
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

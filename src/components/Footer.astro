@@ -1,0 +1,55 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const url = (p: string) => `${base}${p}`;
+---
+
+<footer class="bg-navy-deep text-cream/85">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 grid gap-12 md:grid-cols-4">
+    <div class="md:col-span-2">
+      <div class="font-display text-2xl text-cream mb-3">
+        Scott's <span class="italic text-gold">Ballroom</span>
+      </div>
+      <p class="text-sm leading-relaxed text-cream/70 max-w-md">
+        San Jose's premier event venue — above the skyline at the Rotary Summit Center.
+      </p>
+      <div class="mt-6 text-sm">
+        <p class="text-gold uppercase tracking-widest text-xs mb-2">Part of the Scott's family</p>
+        <div class="flex flex-wrap gap-4 text-cream/70">
+          <a href="https://squidly-inc.github.io/scotts-hospitality/" class="hover:text-gold">Hospitality</a>
+          <a href="https://squidly-inc.github.io/scotts-mockup/" class="hover:text-gold">Restaurant</a>
+          <a href="https://squidly-inc.github.io/scotts-provisions/" class="hover:text-gold">Provisions</a>
+          <a href="https://squidly-inc.github.io/scotts-social-club/" class="hover:text-gold">Social Club</a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="text-sm uppercase tracking-widest text-gold mb-4">Reach Us</h4>
+      <p class="text-sm leading-relaxed text-cream/70">
+        88 S. 4th Street, 7th Floor<br/>
+        San Jose, CA 95112<br/><br/>
+        <a href="tel:+16693474389" class="hover:text-gold">(669) 347-4389</a>
+      </p>
+    </div>
+
+    <div>
+      <h4 class="text-sm uppercase tracking-widest text-gold mb-4">Plan an Event</h4>
+      <ul class="text-sm space-y-2 text-cream/70">
+        <li><a href={url("/spaces")} class="hover:text-gold">Spaces</a></li>
+        <li><a href={url("/events")} class="hover:text-gold">Event Types</a></li>
+        <li><a href={url("/portfolio")} class="hover:text-gold">Portfolio</a></li>
+        <li><a href={url("/contact")} class="hover:text-gold">Inquire Now</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-cream/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-cream/50">
+      <p>© 2026 Scott's Ballroom. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="https://www.instagram.com/scotts.ballroom/" class="hover:text-gold">Instagram</a>
+        <a href="https://www.facebook.com/scottsseafoodballroom" class="hover:text-gold">Facebook</a>
+      </div>
+    </div>
+  </div>
+</footer>

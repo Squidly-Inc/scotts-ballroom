@@ -1,0 +1,137 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact | Scott's Ballroom">
+  <section class="bg-navy-deep pt-32 pb-12 sm:pb-16">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="text-gold uppercase tracking-[0.3em] text-xs mb-4">Inquire</p>
+      <h1 class="font-display text-4xl sm:text-6xl text-cream mb-5 leading-tight">
+        Your Ballroom team is<br/>here to help.
+      </h1>
+      <p class="text-cream/75 max-w-xl mx-auto leading-relaxed">
+        Tell us about your event. We'll respond within one business day.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-cream-soft py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16">
+      <form class="bg-paper p-8 sm:p-10 border-t-4 border-gold space-y-5">
+        <h2 class="font-display text-2xl sm:text-3xl text-ink mb-6">Tell us about your event.</h2>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="name" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Name</label>
+            <input type="text" id="name" required class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition" />
+          </div>
+          <div>
+            <label for="company" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Company (optional)</label>
+            <input type="text" id="company" class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition" />
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="email" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Email</label>
+            <input type="email" id="email" required class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition" />
+          </div>
+          <div>
+            <label for="phone" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Phone</label>
+            <input type="tel" id="phone" class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition" />
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="event-type" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Event Type</label>
+            <select id="event-type" class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition">
+              <option>Wedding</option>
+              <option>Corporate / Conference</option>
+              <option>Holiday Party</option>
+              <option>Gala / Nonprofit</option>
+              <option>Milestone Birthday</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="guests" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Approx. Guests</label>
+            <input type="number" id="guests" min="1" class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition" />
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="date" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Preferred Date</label>
+            <input type="date" id="date" class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition" />
+          </div>
+          <div>
+            <label for="space" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Space of Interest</label>
+            <select id="space" class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition">
+              <option>Full Floor</option>
+              <option>Pacific Ballroom</option>
+              <option>Ocean Foyer</option>
+              <option>Harborview Terrace</option>
+              <option>Bayview Terrace</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="details" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Tell us more</label>
+          <textarea id="details" rows="5" class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition" placeholder="Vibe, requirements, vendors, anything that helps us plan."></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-navy-deep text-cream text-sm font-semibold uppercase tracking-widest py-4 hover:bg-ink transition">
+          Submit Inquiry →
+        </button>
+        <p class="text-ink/50 text-xs text-center">We respond within one business day.</p>
+      </form>
+
+      <div class="space-y-10">
+        <div>
+          <h2 class="text-xs uppercase tracking-widest text-navy font-semibold mb-3">Reach Us Directly</h2>
+          <div class="space-y-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-ink/50 mb-1">Phone</p>
+              <a href="tel:+16693474389" class="font-display text-2xl text-ink hover:text-gold-deep transition">(669) 347-4389</a>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-ink/50 mb-1">Email</p>
+              <a href="mailto:events@scottsballroom.com" class="text-ink hover:text-gold-deep transition">events@scottsballroom.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-xs uppercase tracking-widest text-navy font-semibold mb-3">Visit Us</h2>
+          <p class="font-display text-lg text-ink leading-snug">
+            88 S. 4th Street, 7th Floor<br/>
+            The Rotary Summit Center<br/>
+            San Jose, CA 95112
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xs uppercase tracking-widest text-navy font-semibold mb-3">Lead Times</h2>
+          <ul class="text-ink/80 leading-relaxed space-y-2">
+            <li>· Weddings: <strong class="text-ink">6+ months</strong> recommended</li>
+            <li>· Corporate galas: <strong class="text-ink">3–6 months</strong></li>
+            <li>· Social events: <strong class="text-ink">2–3 months</strong></li>
+          </ul>
+        </div>
+
+        <div class="aspect-[5/4] bg-ink/10 shadow-xl">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.123!2d-121.8889!3d37.3349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcca5b3d4e4d5%3A0x0!2zODggUyBGb3VydGggU3QsIFNhbiBKb3NlLCBDQSA5NTExMg!5e0!3m2!1sen!2sus!4v1700000000000"
+            class="w-full h-full"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Scott's Ballroom Map"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
