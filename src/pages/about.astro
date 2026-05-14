@@ -3,6 +3,10 @@ import Layout from "../layouts/Layout.astro";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const url = (p: string) => `${base}${p}`;
+
+const featureImg = "https://static.wixstatic.com/media/56773e_e8eb6ec8755447599adca9d512c222c4~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_90/JK8A0325-1-6-scaled_edited.jpg";
+const teamImg = "https://static.wixstatic.com/media/56773e_b9fbc93c14bd4b5b8ff904dfd944a196~mv2.jpg/v1/fill/w_1200,h_900/458690613_1500747403903587_2287569386930.jpg";
+const includedImg = "https://static.wixstatic.com/media/56773e_2920d977ee68477c9c56ae32b1903e29~mv2.jpg/v1/fill/w_1200,h_900/seafood%20paella_edited.jpg";
 ---
 
 <Layout title="About | Scott's Ballroom">
@@ -16,7 +20,17 @@ const url = (p: string) => `${base}${p}`;
     </div>
   </section>
 
-  <section class="bg-cream-soft py-20 sm:py-28">
+  <!-- FEATURE IMAGE -->
+  <section class="bg-navy-deep pb-0">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="aspect-[16/7] overflow-hidden shadow-2xl -mb-20 sm:-mb-28">
+        <img src={featureImg} alt="Scott's Ballroom" class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO COPY -->
+  <section class="bg-cream-soft pt-32 sm:pt-40 pb-20 sm:pb-28">
     <div class="max-w-4xl mx-auto px-5 sm:px-8 space-y-8 text-ink/80 leading-relaxed text-lg">
       <p>
         Scott's Ballroom is the event venue arm of Scott's Seafood San Jose —
@@ -30,33 +44,55 @@ const url = (p: string) => `${base}${p}`;
         foyer, and two outdoor terraces with full panoramic views of the
         San Jose skyline.
       </p>
-      <p>
-        Every event runs under one roof: in-house culinary, beverage program,
-        event coordination, A/V, and service staff. Our team handles the
-        logistics so you handle the moment.
-      </p>
     </div>
   </section>
 
+  <!-- SPLIT: TEAM + COPY -->
   <section class="bg-paper py-20 sm:py-28 border-y border-line">
-    <div class="max-w-5xl mx-auto px-5 sm:px-8">
-      <div class="text-center mb-12">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="aspect-[4/3] overflow-hidden shadow-2xl bg-ink/10">
+        <img src={teamImg} alt="The Scott's Ballroom team" class="w-full h-full object-cover" />
+      </div>
+      <div>
+        <p class="text-navy uppercase tracking-[0.3em] text-xs mb-4">One Team</p>
+        <h2 class="font-display text-3xl sm:text-5xl text-ink mb-6 leading-tight">
+          One roof. <span class="italic text-gold-deep">One team.</span>
+        </h2>
+        <p class="text-ink/75 leading-relaxed mb-5 text-lg">
+          Every event runs under one roof: in-house culinary, beverage program,
+          event coordination, A/V, and service staff.
+        </p>
+        <p class="text-ink/75 leading-relaxed text-lg">
+          Our team handles the logistics so you handle the moment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED with image -->
+  <section class="bg-cream-soft py-20 sm:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="lg:order-2 aspect-[4/3] overflow-hidden shadow-2xl bg-ink/10">
+        <img src={includedImg} alt="Event setup and service" class="w-full h-full object-cover" />
+      </div>
+      <div class="lg:order-1">
         <p class="text-navy uppercase tracking-[0.3em] text-xs mb-4">What's Included</p>
-        <h2 class="font-display text-3xl sm:text-5xl text-ink leading-tight">
+        <h2 class="font-display text-3xl sm:text-5xl text-ink mb-8 leading-tight">
           Every event includes.
         </h2>
+        <div class="grid grid-cols-2 gap-x-6 gap-y-4 text-ink/80">
+          <div class="flex gap-3 items-start"><span class="text-gold-deep font-bold text-xl leading-none">·</span><p>Tables (high & low)</p></div>
+          <div class="flex gap-3 items-start"><span class="text-gold-deep font-bold text-xl leading-none">·</span><p>Chairs</p></div>
+          <div class="flex gap-3 items-start"><span class="text-gold-deep font-bold text-xl leading-none">·</span><p>Dedicated event coordinator</p></div>
+          <div class="flex gap-3 items-start"><span class="text-gold-deep font-bold text-xl leading-none">·</span><p>Full staffing (FOH & BOH)</p></div>
+          <div class="flex gap-3 items-start"><span class="text-gold-deep font-bold text-xl leading-none">·</span><p>In-house culinary team</p></div>
+          <div class="flex gap-3 items-start"><span class="text-gold-deep font-bold text-xl leading-none">·</span><p>Standard A/V setup</p></div>
+        </div>
+        <p class="mt-8 text-ink/60 italic text-sm">
+          Add-ons available: florals, custom linens, dance floor, DJ, lighting upgrades.
+          Preferred vendor partners on every category.
+        </p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8 text-ink/80">
-        <div class="flex gap-4 items-start"><span class="font-display text-gold-deep text-2xl leading-none">·</span><p>Tables (high and low)</p></div>
-        <div class="flex gap-4 items-start"><span class="font-display text-gold-deep text-2xl leading-none">·</span><p>Chairs</p></div>
-        <div class="flex gap-4 items-start"><span class="font-display text-gold-deep text-2xl leading-none">·</span><p>Dedicated event coordinator</p></div>
-        <div class="flex gap-4 items-start"><span class="font-display text-gold-deep text-2xl leading-none">·</span><p>Full staffing (FOH & BOH)</p></div>
-        <div class="flex gap-4 items-start"><span class="font-display text-gold-deep text-2xl leading-none">·</span><p>In-house culinary team</p></div>
-        <div class="flex gap-4 items-start"><span class="font-display text-gold-deep text-2xl leading-none">·</span><p>Standard A/V setup</p></div>
-      </div>
-      <p class="text-center mt-12 text-ink/60 italic">
-        Add-ons available: florals, custom linens, dance floor, DJ, lighting upgrades. Preferred vendor partners on every category.
-      </p>
     </div>
   </section>
 
