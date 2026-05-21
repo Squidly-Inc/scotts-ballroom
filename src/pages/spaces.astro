@@ -8,9 +8,9 @@ const spaces = [
   {
     id: "bayview",
     name: "Bayview Terrace",
-    sqft: "1,100",
-    seated: 60,
-    standing: 120,
+    sqft: "770",
+    seated: 50,
+    standing: 70,
     type: "Outdoor · Skyline Terrace",
     body: "The east-facing companion terrace with views over the Rotunda and toward the bay. Quieter, more intimate, often used for ceremony backdrops or VIP receptions.",
     perfectFor: ["Wedding ceremonies", "VIP cocktail spaces", "Private toasts"],
@@ -19,9 +19,9 @@ const spaces = [
   {
     id: "harborview",
     name: "Harborview Terrace",
-    sqft: "1,100",
-    seated: 60,
-    standing: 120,
+    sqft: "1,067",
+    seated: 70,
+    standing: 100,
     type: "Outdoor · Open-Air Terrace",
     body: "A wraparound outdoor terrace overlooking downtown San Jose. String lights, planters, and a built-in service bar. Best at golden hour.",
     perfectFor: ["Cocktail receptions", "Outdoor ceremonies", "Rooftop dinners"],
@@ -30,9 +30,9 @@ const spaces = [
   {
     id: "foyer",
     name: "Ocean Foyer",
-    sqft: "1,400",
-    seated: 80,
-    standing: 200,
+    sqft: "1,826",
+    seated: 160,
+    standing: 180,
     type: "Indoor · Pre-function & Cocktail",
     body: "The arrival space and natural cocktail-hour flow. Connects directly to the Pacific Ballroom and the Harborview Terrace, so guests circulate seamlessly between indoor and outdoor zones.",
     perfectFor: ["Cocktail receptions", "Pre-event mingling", "Stand-alone networking"],
@@ -41,9 +41,9 @@ const spaces = [
   {
     id: "pacific",
     name: "Pacific Ballroom",
-    sqft: "3,200",
-    seated: 350,
-    standing: 500,
+    sqft: "3,500",
+    seated: 380,
+    standing: 440,
     type: "Indoor · Main Ballroom",
     body: "The flagship room — a wide-open ballroom with floor-to-ceiling windows facing west. Soft lighting on dimmers, polished concrete floors, and a sound system tuned for everything from string quartets to DJs.",
     perfectFor: ["Wedding ceremonies & receptions", "Galas", "Corporate keynotes"],
@@ -52,12 +52,12 @@ const spaces = [
 ];
 
 const compare = [
-  ["", "Sq Ft", "Seated", "Standing", "Setting"],
-  ["Bayview Terrace", "1,100", "60", "120", "Outdoor (East)"],
-  ["Harborview Terrace", "1,100", "60", "120", "Outdoor (West)"],
-  ["Ocean Foyer", "1,400", "80", "200", "Indoor"],
-  ["Pacific Ballroom", "3,200", "350", "500", "Indoor"],
-  ["Full Floor (all four)", "6,800", "550", "700", "Indoor + Outdoor"],
+  ["", "Sq Ft", "Seated", "Reception", "Setting"],
+  ["Bayview Terrace", "770", "50", "70", "Outdoor (East)"],
+  ["Harborview Terrace", "1,067", "70", "100", "Outdoor (West)"],
+  ["Ocean Foyer", "1,826", "160", "180", "Indoor"],
+  ["Pacific Ballroom", "3,500", "380", "440", "Indoor"],
+  ["Full Floor (all four)", "7,163", "660", "792", "Indoor + Outdoor"],
 ];
 ---
 
@@ -115,7 +115,7 @@ const compare = [
                 <p class="font-display text-2xl text-ink">{s.seated}</p>
               </div>
               <div>
-                <p class="text-xs uppercase tracking-widest text-navy font-semibold mb-1">Standing</p>
+                <p class="text-xs uppercase tracking-widest text-navy font-semibold mb-1">Reception</p>
                 <p class="font-display text-2xl text-ink">{s.standing}</p>
               </div>
             </div>
