@@ -76,7 +76,7 @@ const compare = [
     </div>
   </section>
 
-  <section class="bg-ink-soft sticky top-[68px] z-40 border-t border-cream/10">
+  <section class="bg-ink-soft sticky top-[88px] sm:top-[96px] z-40 border-t border-cream/10">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 overflow-x-auto">
       <div class="flex gap-1 py-2">
         {spaces.map((s) => (
@@ -96,8 +96,13 @@ const compare = [
       {spaces.map((s, i) => (
         <article id={s.id} class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
           <div class={i % 2 === 1 ? "lg:order-2" : ""}>
-            <div class="aspect-[4/3] overflow-hidden shadow-2xl bg-ink/10">
+            <div class="relative aspect-[4/3] overflow-hidden shadow-2xl bg-ink/10">
               <img src={s.img} alt={s.name} class="w-full h-full object-cover" />
+              {(s.id === "bayview" || s.id === "harborview") && (
+                <span class="absolute top-3 left-3 bg-ink/85 text-cream text-[10px] uppercase tracking-widest font-semibold px-3 py-1.5">
+                  Placeholder photo
+                </span>
+              )}
             </div>
           </div>
 

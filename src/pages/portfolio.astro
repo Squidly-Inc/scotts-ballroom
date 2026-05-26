@@ -32,20 +32,23 @@ const testimonials = [
 
   <section class="bg-cream-soft py-16 sm:py-24">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="bg-paper border-l-4 border-gold p-5 mb-10 text-sm text-ink/80 leading-relaxed">
+        <strong class="text-ink">Placeholder portfolio.</strong> Event names, photos, and testimonials below are sample content. Real event photos and quotes are pending from Kremo and the events team.
+      </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {events.map((e) => (
           <div class="group">
-            <div class="aspect-[4/3] overflow-hidden mb-4 bg-ink/10">
+            <div class="relative aspect-[4/3] overflow-hidden mb-4 bg-ink/10">
               <img src={e.img} alt={e.title} class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+              <span class="absolute top-3 left-3 bg-ink/85 text-cream text-[10px] uppercase tracking-widest font-semibold px-3 py-1.5">
+                Placeholder
+              </span>
             </div>
             <p class="text-gold-deep uppercase tracking-widest text-xs mb-1">{e.type} · {e.guests} guests</p>
             <h3 class="font-display text-xl text-ink leading-tight">{e.title}</h3>
           </div>
         ))}
       </div>
-      <p class="text-center mt-12 text-ink/50 italic">
-        Sample portfolio — full event archive available on request.
-      </p>
     </div>
   </section>
 

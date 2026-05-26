@@ -57,8 +57,11 @@ const facts = [
       {types.map((t, i) => (
         <article id={t.id} class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
           <div class={i % 2 === 1 ? "lg:order-2" : ""}>
-            <div class="aspect-[4/3] overflow-hidden shadow-2xl bg-ink/10">
+            <div class="relative aspect-[4/3] overflow-hidden shadow-2xl bg-ink/10">
               <img src={t.img} alt={t.title} class="w-full h-full object-cover" />
+              <span class="absolute top-3 left-3 bg-ink/85 text-cream text-[10px] uppercase tracking-widest font-semibold px-3 py-1.5">
+                Placeholder photo
+              </span>
             </div>
           </div>
           <div class={i % 2 === 1 ? "lg:order-1" : ""}>

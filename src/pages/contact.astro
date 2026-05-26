@@ -16,126 +16,75 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <section class="bg-cream-soft py-16 sm:py-24">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16">
-      <form class="bg-paper p-8 sm:p-10 border-t-4 border-gold space-y-5">
-        <h2 class="font-display text-2xl sm:text-3xl text-ink mb-6">Tell us about your event.</h2>
-
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div>
-            <label for="name" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Name</label>
-            <input type="text" id="name" required class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition" />
-          </div>
-          <div>
-            <label for="company" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Company (optional)</label>
-            <input type="text" id="company" class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition" />
-          </div>
-        </div>
-
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div>
-            <label for="email" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Email</label>
-            <input type="email" id="email" required class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition" />
-          </div>
-          <div>
-            <label for="phone" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Phone</label>
-            <input type="tel" id="phone" class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition" />
-          </div>
-        </div>
-
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div>
-            <label for="event-type" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Event Type</label>
-            <select id="event-type" class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition">
-              <option>Wedding</option>
-              <option>Corporate / Conference</option>
-              <option>Holiday Party</option>
-              <option>Gala / Nonprofit</option>
-              <option>Milestone Birthday</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div>
-            <label for="guests" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Approx. Guests</label>
-            <input type="number" id="guests" min="1" class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition" />
-          </div>
-        </div>
-
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div>
-            <label for="date" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Preferred Date</label>
-            <input type="date" id="date" class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition" />
-          </div>
-          <div>
-            <label for="space" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Space of Interest</label>
-            <select id="space" class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition">
-              <option>Full Floor</option>
-              <option>Pacific Ballroom</option>
-              <option>Ocean Foyer</option>
-              <option>Harborview Terrace</option>
-              <option>Bayview Terrace</option>
-              <option>Not sure yet</option>
-            </select>
-          </div>
-        </div>
-
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-5 gap-12 lg:gap-16">
+      <div class="lg:col-span-2 space-y-10">
         <div>
-          <label for="details" class="text-xs uppercase tracking-widest text-navy font-semibold mb-2 block">Tell us more</label>
-          <textarea id="details" rows="5" class="w-full border border-line bg-cream-soft px-4 py-3 text-ink focus:outline-none focus:border-navy transition" placeholder="Vibe, requirements, vendors, anything that helps us plan."></textarea>
-        </div>
-
-        <button type="submit" class="w-full bg-navy-deep text-cream text-sm font-semibold uppercase tracking-widest py-4 hover:bg-ink transition">
-          Submit Inquiry →
-        </button>
-        <p class="text-ink/50 text-xs text-center">Our team will follow up with availability, pricing, and next steps.</p>
-      </form>
-
-      <div class="space-y-10">
-        <div>
-          <h2 class="text-xs uppercase tracking-widest text-navy font-semibold mb-3">Reach Us Directly</h2>
-          <div class="space-y-4">
-            <div>
-              <p class="text-xs uppercase tracking-widest text-ink/50 mb-1">Phone</p>
-              <a href="tel:+16693474389" class="font-display text-2xl text-ink hover:text-gold-deep transition">(669) 347-4389</a>
-            </div>
-            <div>
-              <p class="text-xs uppercase tracking-widest text-ink/50 mb-1">Email</p>
-              <a href="mailto:kremo.bibi@scottsseafoodsj.com" class="text-ink hover:text-gold-deep transition">kremo.bibi@scottsseafoodsj.com</a>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-xs uppercase tracking-widest text-navy font-semibold mb-3">Visit Us</h2>
-          <p class="font-display text-lg text-ink leading-snug">
+          <h2 class="text-xs uppercase tracking-widest text-navy font-semibold mb-3">Address</h2>
+          <p class="font-display text-2xl text-ink leading-snug">
             88 S. 4th Street, 7th Floor<br/>
             The Rotary Summit Center<br/>
             San Jose, CA 95112
           </p>
+          <a href="https://maps.google.com/?q=88+S+4th+St+San+Jose+CA+95112" target="_blank" rel="noopener" class="inline-block mt-3 text-navy text-xs uppercase tracking-widest font-semibold border-b border-navy pb-1 hover:text-gold-deep">
+            Get Directions →
+          </a>
+        </div>
+
+        <div>
+          <h2 class="text-xs uppercase tracking-widest text-navy font-semibold mb-3">Phone</h2>
+          <a href="tel:+16693474389" class="font-display text-2xl text-ink hover:text-gold-deep transition">(669) 347-4389</a>
+        </div>
+
+        <div>
+          <h2 class="text-xs uppercase tracking-widest text-navy font-semibold mb-3">Events Contact</h2>
+          <p class="text-ink mb-2">Kremo Bibi · Sales & Events</p>
+          <a href="mailto:kremo.bibi@scottsseafoodsj.com" class="block text-ink/80 hover:text-gold-deep">kremo.bibi@scottsseafoodsj.com</a>
         </div>
 
         <div>
           <h2 class="text-xs uppercase tracking-widest text-navy font-semibold mb-3">Lead Times</h2>
-          <ul class="text-ink/80 leading-relaxed space-y-2">
-            <li>· Weddings: <strong class="text-ink">6+ months</strong> recommended</li>
-            <li>· Corporate galas: <strong class="text-ink">3–6 months</strong></li>
-            <li>· Social events: <strong class="text-ink">2–3 months</strong></li>
-          </ul>
+          <dl class="space-y-3 text-ink">
+            <div>
+              <dt class="font-semibold text-sm text-ink/70">Weddings</dt>
+              <dd class="font-display text-lg">6+ months recommended</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-sm text-ink/70">Corporate galas</dt>
+              <dd class="font-display text-lg">3–6 months</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-sm text-ink/70">Social events</dt>
+              <dd class="font-display text-lg">2–3 months</dd>
+            </div>
+          </dl>
+          <p class="text-sm italic text-ink/60 mt-4">
+            We aim to get back to all inquiries within 1 business day.
+          </p>
         </div>
 
-        <div class="aspect-[5/4] bg-ink/10 shadow-xl">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.123!2d-121.8889!3d37.3349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcca5b3d4e4d5%3A0x0!2zODggUyBGb3VydGggU3QsIFNhbiBKb3NlLCBDQSA5NTExMg!5e0!3m2!1sen!2sus!4v1700000000000"
-            class="w-full h-full"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Scott's Ballroom Map"
-          ></iframe>
+        <div>
+          <h2 class="text-xs uppercase tracking-widest text-navy font-semibold mb-3">Follow</h2>
+          <div class="flex gap-3">
+            <a href="https://www.instagram.com/scotts.ballroom/" class="border border-ink/20 p-3 hover:bg-ink hover:text-cream transition" aria-label="Instagram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.71 3.71 0 0 1-1.38-.9 3.71 3.71 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.55-.79.31-1.46.72-2.13 1.38A5.88 5.88 0 0 0 .62 4.13c-.3.76-.5 1.63-.55 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.55 2.91.31.79.72 1.46 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.63.5 2.91.55C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.55a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.63.55-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.55-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.62c-.76-.3-1.63-.5-2.91-.55C15.67.01 15.26 0 12 0z"/><path d="M12 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
+            </a>
+            <a href="https://www.facebook.com/scottsseafoodballroom" class="border border-ink/20 p-3 hover:bg-ink hover:text-cream transition" aria-label="Facebook">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.27h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+            </a>
+          </div>
         </div>
       </div>
+
+      <div class="lg:col-span-3 aspect-[4/3] lg:aspect-auto lg:min-h-[600px] bg-ink/10 shadow-xl">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.123!2d-121.8889!3d37.3349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcca5b3d4e4d5%3A0x0!2zODggUyBGb3VydGggU3QsIFNhbiBKb3NlLCBDQSA5NTExMg!5e0!3m2!1sen!2sus!4v1700000000000"
+          class="w-full h-full"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Scott's Ballroom Map"
+        ></iframe>
+      </div>
     </div>
-    <p class="max-w-7xl mx-auto px-5 sm:px-8 pt-10 text-center text-ink/60 text-sm italic">
-      We aim to get back to all inquiries within 1 business day.
-    </p>
   </section>
 
   <section class="bg-navy-deep py-16 sm:py-20">
@@ -148,9 +97,9 @@ import Layout from "../layouts/Layout.astro";
         Recent weddings, real galas, seasonal packages, and the occasional
         venue tour invite — in your inbox a few times a year.
       </p>
-      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+      <form action="https://scottshospitality.com/newsletter" method="post" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
         <label class="sr-only" for="newsletter-email">Email address</label>
-        <input id="newsletter-email" type="email" required placeholder="you@example.com" class="flex-1 bg-cream-soft text-ink px-4 py-3 placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-gold" />
+        <input id="newsletter-email" name="email" type="email" required placeholder="you@example.com" class="flex-1 bg-cream-soft text-ink px-4 py-3 placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-gold" />
         <button type="submit" class="bg-gold text-ink text-xs font-semibold uppercase tracking-widest px-6 py-3 hover:bg-cream transition">Subscribe</button>
       </form>
       <p class="text-cream/40 text-xs mt-4">We respect your inbox. No spam, unsubscribe anytime.</p>
