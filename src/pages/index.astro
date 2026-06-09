@@ -30,19 +30,24 @@ const eventTypes = [
 
 const testimonials = [
   {
-    quote: "Scott's Ballroom turned our wedding into something we'll talk about for years. The view, the food, the team — flawless.",
-    name: "Emily & James Taylor",
-    event: "Wedding · 220 guests",
+    quote: "Our event last Sunday was fantastic! Everyone enjoyed the venue and Kremo and the team did a great job! We are definitely interested in having our next celebration at Scott's Ballroom!",
+    name: "JW House",
+    event: "Non-Profit · 200 guests",
   },
   {
-    quote: "Our corporate gala needed to feel premium without feeling stuffy. Scott's nailed it. Catering was excellent, AV was seamless.",
-    name: "Michael Johnson",
-    event: "Corporate Gala · 450 guests",
+    quote: "From start to finish at the event, all went well. I cannot sing the praises enough of how great Kremo has been to work with since we began exploring the possibility of the Scott's venue. Please know that the venue and your team will be highly recommended by me going forward.",
+    name: "Brian A.",
+    event: "High School Reunion · 150 guests",
   },
   {
-    quote: "The Bayview Terrace at sunset is the most photographed cocktail hour I've ever planned. Bookings are filling up — start early.",
-    name: "Sophia Martinez",
-    event: "Nonprofit Fundraiser · 180 guests",
+    quote: "The Rotary Club of San Jose has the pleasure of working with Scott's Seafood, and they consistently exceed our expectations. Their team delivers high-quality meals that are fresh, flavorful, and professionally prepared. They are a valued partner and we look forward to continuing our partnership for years to come.",
+    name: "Marie Barlahan",
+    event: "Rotary Club of San Jose · Membership & Event Manager",
+  },
+  {
+    quote: "Sammy & Kremo, thank you so much for your incredible partnership last week (and beyond). We really appreciate your flexibility on-site — our PICs were super happy with everything. Your team was awesome!",
+    name: "Kaitlyn Ladewig",
+    event: "NVIDIA · Conference Operations Manager",
   },
 ];
 ---
@@ -142,10 +147,10 @@ const testimonials = [
         <p class="text-gold uppercase tracking-[0.3em] text-xs mb-4">From Our Hosts</p>
         <h2 class="font-display text-3xl sm:text-5xl">Words that echo.</h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-8 sm:gap-10">
+      <div class="grid md:grid-cols-2 gap-8 sm:gap-10">
         {testimonials.map((t) => (
           <blockquote class="border-l-2 border-gold pl-6">
-            <p class="font-display text-lg italic text-cream/95 leading-relaxed mb-5">"{t.quote}"</p>
+            <p class="font-display text-base sm:text-lg italic text-cream/95 leading-relaxed mb-5">"{t.quote}"</p>
             <footer class="text-sm">
               <p class="text-cream font-semibold">{t.name}</p>
               <p class="text-cream/60">{t.event}</p>
