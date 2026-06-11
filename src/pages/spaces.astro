@@ -14,7 +14,7 @@ const spaces = [
     type: "Outdoor · Skyline Terrace",
     body: "The east-facing companion terrace with views over the Rotunda and toward the bay. Quieter, more intimate, often used for ceremony backdrops or VIP receptions.",
     perfectFor: ["Wedding ceremonies", "VIP cocktail spaces", "Private toasts"],
-    img: "https://static.wixstatic.com/media/56773e_e8eb6ec8755447599adca9d512c222c4~mv2.jpg/v1/fill/w_1200,h_800/JK8A0325-1-6-scaled_edited.jpg",
+    img: `${base}/photos/bayview-1.jpg`,
   },
   {
     id: "harborview",
@@ -25,7 +25,7 @@ const spaces = [
     type: "Outdoor · Open-Air Terrace",
     body: "A wraparound outdoor terrace overlooking downtown San Jose. String lights, planters, and a built-in service bar. Best at golden hour.",
     perfectFor: ["Cocktail receptions", "Outdoor ceremonies", "Rooftop dinners"],
-    img: "https://static.wixstatic.com/media/56773e_2920d977ee68477c9c56ae32b1903e29~mv2.jpg/v1/fill/w_1200,h_800/seafood%20paella_edited.jpg",
+    img: `${base}/photos/harborview-1.jpg`,
   },
   {
     id: "foyer",
@@ -98,11 +98,6 @@ const compare = [
           <div class={i % 2 === 1 ? "lg:order-2" : ""}>
             <div class="relative aspect-[4/3] overflow-hidden shadow-2xl bg-ink/10">
               <img src={s.img} alt={s.name} class="w-full h-full object-cover" />
-              {(s.id === "bayview" || s.id === "harborview") && (
-                <span class="absolute top-3 left-3 bg-ink/85 text-cream text-[10px] uppercase tracking-widest font-semibold px-3 py-1.5">
-                  Placeholder photo
-                </span>
-              )}
             </div>
           </div>
 

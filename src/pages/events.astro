@@ -10,21 +10,21 @@ const types = [
     title: "Weddings",
     body: "Ceremony, cocktail hour, and reception — all on one floor with skyline views. Coordinate florals, custom linens, and DJ through our preferred vendor list, or bring your own.",
     examples: ["Indoor ceremonies in Pacific Ballroom", "Outdoor ceremonies on Bayview Terrace", "Cocktail hours on Harborview Terrace", "Receptions up to 380 seated"],
-    img: "https://static.wixstatic.com/media/56773e_e8eb6ec8755447599adca9d512c222c4~mv2.jpg/v1/fill/w_1200,h_800/JK8A0325-1-6-scaled_edited.jpg",
+    img: `${base}/photos/event-wedding.jpg`,
   },
   {
     id: "corporate",
     title: "Corporate Events",
     body: "Conferences, holiday parties, product launches, board dinners, and galas. Full A/V, dedicated event coordinator, and white-glove service.",
     examples: ["Keynote conferences up to 500", "Annual galas & holiday parties", "Product launches & client dinners", "Multi-day off-sites"],
-    img: "https://static.wixstatic.com/media/56773e_b9fbc93c14bd4b5b8ff904dfd944a196~mv2.jpg/v1/fill/w_1200,h_800/458690613_1500747403903587_2287569386930.jpg",
+    img: `${base}/photos/event-corporate.jpg`,
   },
   {
     id: "social",
     title: "Social & Nonprofit",
     body: "Milestone birthdays, anniversaries, nonprofit fundraisers, fundraising galas, and community events. Flexible packages, generous nonprofit pricing.",
     examples: ["Milestone birthdays", "Anniversary parties", "Quinceañeras", "Nonprofit galas & auctions"],
-    img: "https://static.wixstatic.com/media/56773e_2920d977ee68477c9c56ae32b1903e29~mv2.jpg/v1/fill/w_1200,h_800/seafood%20paella_edited.jpg",
+    img: `${base}/photos/event-social.jpg`,
   },
 ];
 
@@ -59,9 +59,6 @@ const facts = [
           <div class={i % 2 === 1 ? "lg:order-2" : ""}>
             <div class="relative aspect-[4/3] overflow-hidden shadow-2xl bg-ink/10">
               <img src={t.img} alt={t.title} class="w-full h-full object-cover" />
-              <span class="absolute top-3 left-3 bg-ink/85 text-cream text-[10px] uppercase tracking-widest font-semibold px-3 py-1.5">
-                Placeholder photo
-              </span>
             </div>
           </div>
           <div class={i % 2 === 1 ? "lg:order-1" : ""}>
