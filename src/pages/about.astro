@@ -4,9 +4,9 @@ import Layout from "../layouts/Layout.astro";
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const url = (p: string) => `${base}${p}`;
 
-const featureImg = "https://static.wixstatic.com/media/56773e_e8eb6ec8755447599adca9d512c222c4~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_90/JK8A0325-1-6-scaled_edited.jpg";
-const teamImg = "https://static.wixstatic.com/media/56773e_b9fbc93c14bd4b5b8ff904dfd944a196~mv2.jpg/v1/fill/w_1200,h_900/458690613_1500747403903587_2287569386930.jpg";
-const includedImg = "https://static.wixstatic.com/media/56773e_2920d977ee68477c9c56ae32b1903e29~mv2.jpg/v1/fill/w_1200,h_900/seafood%20paella_edited.jpg";
+const featureImg = `${base}/photos/ballroom-pacific-banquet.jpg`;
+const teamImg = `${base}/photos/event-corporate.jpg`;
+const includedImg = `${base}/photos/ballroom-foyer-cocktail.jpg`;
 ---
 
 <Layout title="About | Scott's Ballroom">

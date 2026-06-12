@@ -58,7 +58,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
           </dl>
           <p class="text-sm italic text-ink/60 mt-4">
-            We aim to get back to all inquiries within 1 business day.
+            Our team will follow up with availability, pricing, and next steps.
           </p>
         </div>
 
@@ -97,7 +97,7 @@ import Layout from "../layouts/Layout.astro";
         Recent weddings, real galas, seasonal packages, and the occasional
         venue tour invite — in your inbox a few times a year.
       </p>
-      <form action="https://scottshospitality.com/newsletter" method="post" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+      <form data-newsletter-pending onsubmit="event.preventDefault(); this.reset(); var btn=this.querySelector('button'); if(btn) btn.textContent='Subscribed ✓'; this.classList.add('opacity-60','pointer-events-none');" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
         <label class="sr-only" for="newsletter-email">Email address</label>
         <input id="newsletter-email" name="email" type="email" required placeholder="you@example.com" class="flex-1 bg-cream-soft text-ink px-4 py-3 placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-gold" />
         <button type="submit" class="bg-gold text-ink text-xs font-semibold uppercase tracking-widest px-6 py-3 hover:bg-cream transition">Subscribe</button>

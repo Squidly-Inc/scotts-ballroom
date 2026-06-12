@@ -5,26 +5,25 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const url = (p: string) => `${base}${p}`;
 
 const heroVideo = "https://video.wixstatic.com/video/11062b_e47a584dab7d466e8d868d3c59d86da4/1080p/mp4/file.mp4";
-const heroPoster = "https://static.wixstatic.com/media/a60a26_4153dd667be446578ab4d4461bb8f810f000.jpg";
 
 const eventTypes = [
   {
     title: "Weddings",
     body: "Ballroom ceremonies, terrace cocktail hours, and skyline receptions.",
     href: url("/events") + "#weddings",
-    img: "https://static.wixstatic.com/media/56773e_e8eb6ec8755447599adca9d512c222c4~mv2.jpg/v1/fill/w_892,h_670,al_c,q_85/JK8A0325-1-6-scaled_edited.jpg",
+    img: `${base}/photos/event-wedding.jpg`,
   },
   {
     title: "Corporate",
     body: "Galas, conferences, holiday parties — fully serviced for up to 790+.",
     href: url("/events") + "#corporate",
-    img: "https://static.wixstatic.com/media/56773e_b9fbc93c14bd4b5b8ff904dfd944a196~mv2.jpg/v1/fill/w_892,h_670,al_c,q_85/458690613_1500747403903587_2287569386930.jpg",
+    img: `${base}/photos/event-corporate.jpg`,
   },
   {
     title: "Social",
     body: "Milestone birthdays, anniversaries, nonprofits, fundraisers, and galas.",
     href: url("/events") + "#social",
-    img: "https://static.wixstatic.com/media/56773e_2920d977ee68477c9c56ae32b1903e29~mv2.jpg/v1/fill/w_892,h_670,al_c,q_85/seafood%20paella_edited.jpg",
+    img: `${base}/photos/event-social.jpg`,
   },
 ];
 
@@ -36,7 +35,7 @@ const testimonials = [
   },
   {
     quote: "From start to finish at the event, all went well. I cannot sing the praises enough of how great Kremo has been to work with since we began exploring the possibility of the Scott's venue. Please know that the venue and your team will be highly recommended by me going forward.",
-    name: "Brian A.",
+    name: "Brian",
     event: "High School Reunion, 150 guests",
   },
   {
@@ -73,7 +72,7 @@ const testimonials = [
       <p class="fade-up text-gold uppercase tracking-[0.3em] text-xs sm:text-sm mb-4 sm:mb-6">
         The Rotary Summit Center · 7th Floor
       </p>
-      <h1 class="fade-up-delay-1 text-cream font-display text-[1.625rem] leading-[1.2] sm:text-6xl lg:text-7xl sm:leading-[1.05] max-w-3xl tracking-tight">
+      <h1 class="fade-up-delay-1 text-cream font-display text-3xl leading-tight sm:text-6xl lg:text-7xl sm:leading-[1.05] max-w-3xl tracking-tight">
         Your story begins<br/>
         <span class="italic text-gold">above the skyline.</span>
       </h1>
