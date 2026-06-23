@@ -22,7 +22,6 @@ const url = (p: string) => `${base}${p}`;
       <a href={url("/about")} class:list={["hover:text-gold transition", isActive("/about") && "text-gold"]}>About</a>
       <a href={url("/spaces")} class:list={["hover:text-gold transition", isActive("/spaces") && "text-gold"]}>Spaces</a>
       <a href={url("/events")} class:list={["hover:text-gold transition", isActive("/events") && "text-gold"]}>Events</a>
-      <a href={url("/portfolio")} class:list={["hover:text-gold transition", isActive("/portfolio") && "text-gold"]}>Portfolio</a>
       <a href={url("/contact")} class:list={["hover:text-gold transition", isActive("/contact") && "text-gold"]}>Contact</a>
     </nav>
 
@@ -43,7 +42,6 @@ const url = (p: string) => `${base}${p}`;
       <a href={url("/about")} class="py-3 border-b border-cream/10 hover:text-gold">About</a>
       <a href={url("/spaces")} class="py-3 border-b border-cream/10 hover:text-gold">Spaces</a>
       <a href={url("/events")} class="py-3 border-b border-cream/10 hover:text-gold">Events</a>
-      <a href={url("/portfolio")} class="py-3 border-b border-cream/10 hover:text-gold">Portfolio</a>
       <a href={url("/contact")} class="py-3 hover:text-gold">Contact</a>
       <a href={url("/contact")} class="mt-4 bg-gold text-navy-deep text-center font-semibold py-3 hover:bg-cream transition">Inquire Now</a>
     </nav>

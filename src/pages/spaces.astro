@@ -14,7 +14,11 @@ const spaces = [
     type: "Outdoor · Skyline Terrace",
     body: "The east-facing companion terrace with views over the Rotunda and toward the bay. Quieter, more intimate, often used for ceremony backdrops or VIP receptions.",
     perfectFor: ["Wedding ceremonies", "VIP cocktail spaces", "Private toasts"],
-    img: `${base}/photos/bayview-1.jpg`,
+    images: [
+      `${base}/photos/bayview-1.jpg`,
+      `${base}/photos/bayview-2.jpg`,
+      `${base}/photos/bayview-3.jpg`,
+    ],
   },
   {
     id: "harborview",
@@ -25,7 +29,10 @@ const spaces = [
     type: "Outdoor · Open-Air Terrace",
     body: "A wraparound outdoor terrace overlooking downtown San Jose. String lights, planters, and a built-in service bar. Best at golden hour.",
     perfectFor: ["Cocktail receptions", "Outdoor ceremonies", "Rooftop dinners"],
-    img: `${base}/photos/harborview-1.jpg`,
+    images: [
+      `${base}/photos/harborview-1.jpg`,
+      `${base}/photos/harborview-2.jpg`,
+    ],
   },
   {
     id: "foyer",
@@ -36,7 +43,9 @@ const spaces = [
     type: "Indoor · Pre-function & Cocktail",
     body: "The arrival space and natural cocktail-hour flow. Connects directly to the Pacific Ballroom and the Harborview Terrace, so guests circulate seamlessly between indoor and outdoor zones.",
     perfectFor: ["Cocktail receptions", "Pre-event mingling", "Stand-alone networking"],
-    img: `${base}/photos/ballroom-foyer-cocktail.jpg`,
+    images: [
+      `${base}/photos/ballroom-foyer-cocktail.jpg`,
+    ],
   },
   {
     id: "pacific",
@@ -47,7 +56,9 @@ const spaces = [
     type: "Indoor · Main Ballroom",
     body: "The flagship room — a wide-open ballroom with floor-to-ceiling windows facing west. Soft lighting on dimmers, polished concrete floors, and a sound system tuned for everything from string quartets to DJs.",
     perfectFor: ["Wedding ceremonies & receptions", "Galas", "Corporate keynotes"],
-    img: `${base}/photos/ballroom-pacific-banquet.jpg`,
+    images: [
+      `${base}/photos/ballroom-pacific-banquet.jpg`,
+    ],
   },
 ];
 
@@ -96,8 +107,44 @@ const compare = [
       {spaces.map((s, i) => (
         <article id={s.id} class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
           <div class={i % 2 === 1 ? "lg:order-2" : ""}>
-            <div class="relative aspect-[4/3] overflow-hidden shadow-2xl bg-ink/10">
-              <img src={s.img} alt={s.name} class="w-full h-full object-cover" />
+            <div class="relative aspect-[4/3] overflow-hidden shadow-2xl bg-ink/10" data-carousel={s.id}>
+              {s.images.map((src, idx) => (
+                <img
+                  src={src}
+                  alt={`${s.name} — view ${idx + 1}`}
+                  class:list={["w-full h-full object-cover absolute inset-0 transition-opacity duration-500", idx === 0 ? "opacity-100" : "opacity-0"]}
+                  data-slide={idx}
+                />
+              ))}
+              {s.images.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    data-carousel-prev={s.id}
+                    aria-label="Previous photo"
+                    class="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-ink/60 hover:bg-ink/85 text-cream w-10 h-10 flex items-center justify-center rounded-full transition"
+                  >
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" /></svg>
+                  </button>
+                  <button
+                    type="button"
+                    data-carousel-next={s.id}
+                    aria-label="Next photo"
+                    class="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-ink/60 hover:bg-ink/85 text-cream w-10 h-10 flex items-center justify-center rounded-full transition"
+                  >
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" /></svg>
+                  </button>
+                  <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex gap-1.5">
+                    {s.images.map((_, idx) => (
+                      <span
+                        data-carousel-dot={s.id}
+                        data-slide-target={idx}
+                        class:list={["block w-2 h-2 rounded-full transition", idx === 0 ? "bg-cream" : "bg-cream/40"]}
+                      ></span>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
@@ -183,4 +230,34 @@ const compare = [
       </a>
     </div>
   </section>
+
+  <script>
+    document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((carousel) => {
+      const id = carousel.dataset.carousel;
+      if (!id) return;
+      const slides = Array.from(carousel.querySelectorAll<HTMLElement>("[data-slide]"));
+      const dots = Array.from(document.querySelectorAll<HTMLElement>(`[data-carousel-dot="${id}"]`));
+      const prev = document.querySelector<HTMLElement>(`[data-carousel-prev="${id}"]`);
+      const next = document.querySelector<HTMLElement>(`[data-carousel-next="${id}"]`);
+      let active = 0;
+      const total = slides.length;
+      if (total <= 1) return;
+
+      const go = (idx: number) => {
+        active = (idx + total) % total;
+        slides.forEach((s, i) => {
+          s.classList.toggle("opacity-100", i === active);
+          s.classList.toggle("opacity-0", i !== active);
+        });
+        dots.forEach((d, i) => {
+          d.classList.toggle("bg-cream", i === active);
+          d.classList.toggle("bg-cream/40", i !== active);
+        });
+      };
+
+      prev?.addEventListener("click", () => go(active - 1));
+      next?.addEventListener("click", () => go(active + 1));
+      dots.forEach((d) => d.addEventListener("click", () => go(Number(d.dataset.slideTarget ?? 0))));
+    });
+  </script>
 </Layout>
