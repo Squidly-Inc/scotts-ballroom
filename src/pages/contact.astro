@@ -57,7 +57,7 @@ import Layout from "../layouts/Layout.astro";
               <dd class="font-display text-lg">2–3 months</dd>
             </div>
           </dl>
-          <p class="text-sm italic text-ink/60 mt-4">
+          <p class="text-sm italic text-ink/70 mt-4">
             Our team will follow up with availability, pricing, and next steps.
           </p>
         </div>
@@ -99,7 +99,7 @@ import Layout from "../layouts/Layout.astro";
       </p>
       <form data-newsletter-pending onsubmit="event.preventDefault(); this.reset(); var btn=this.querySelector('button'); if(btn) btn.textContent='Subscribed ✓'; this.classList.add('opacity-60','pointer-events-none');" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
         <label class="sr-only" for="newsletter-email">Email address</label>
-        <input id="newsletter-email" name="email" type="email" required placeholder="you@example.com" class="flex-1 bg-cream-soft text-ink px-4 py-3 placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-gold" />
+        <input id="newsletter-email" name="email" type="email" required placeholder="you@example.com" class="flex-1 bg-cream-soft text-ink px-4 py-3 placeholder:text-ink/70 focus:outline-none focus:ring-2 focus:ring-gold" />
         <button type="submit" class="bg-gold text-ink text-xs font-semibold uppercase tracking-widest px-6 py-3 hover:bg-cream transition">Subscribe</button>
       </form>
       <p class="text-cream/60 text-xs mt-4">We respect your inbox. No spam, unsubscribe anytime.</p>
