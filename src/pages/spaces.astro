@@ -124,7 +124,7 @@ const compare = [
   <section class="bg-cream-soft py-16 sm:py-24">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 space-y-20 sm:space-y-28">
       {spaces.map((s, i) => (
-        <article id={s.id} class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+        <article id={s.id} class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center scroll-mt-[160px] sm:scroll-mt-[180px]">
           <div class={i % 2 === 1 ? "lg:order-2" : ""}>
             <div class="relative aspect-[4/3] overflow-hidden shadow-2xl bg-ink/10" data-carousel={s.id}>
               {s.images.map((src, idx) => (
@@ -205,12 +205,14 @@ const compare = [
       ))}
 
       <!-- COMPARE -->
-      <div id="compare" class="pt-8 sm:pt-12">
+      <div id="compare" class="pt-8 sm:pt-12 scroll-mt-[160px] sm:scroll-mt-[180px]">
         <div class="text-center mb-12">
           <p class="text-navy uppercase tracking-[0.3em] text-xs mb-4">Side by side</p>
           <h2 class="font-display text-3xl sm:text-5xl text-ink leading-tight">Compare spaces.</h2>
+          <p class="text-ink/50 text-xs italic mt-3 sm:hidden">← Swipe to see all columns →</p>
         </div>
-        <div class="overflow-x-auto bg-paper border border-line shadow-lg">
+        <div class="relative bg-paper border border-line shadow-lg">
+          <div class="overflow-x-auto">
           <table class="w-full text-sm">
             <thead>
               <tr class="bg-navy-deep text-cream">
@@ -229,6 +231,8 @@ const compare = [
               ))}
             </tbody>
           </table>
+          </div>
+          <div class="pointer-events-none absolute top-0 right-0 bottom-0 w-12 bg-gradient-to-l from-paper to-transparent sm:hidden"></div>
         </div>
         <p class="text-center text-ink/50 text-sm italic mt-6">
           Need exact dimensions and floor plans? <a href={url("/contact")} class="text-navy underline hover:text-gold-deep">Contact the team</a> — we'll send the full prospectus.
