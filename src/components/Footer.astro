@@ -59,7 +59,8 @@ const url = (p: string) => `${base}${p}`;
   <div class="border-t border-cream/10">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-cream/65">
       <p>© 2026 Scott's Ballroom. All rights reserved.</p>
-      <div class="flex gap-6">
+      <div class="flex gap-6 flex-wrap justify-center sm:justify-end">
+        <a href={url("/accessibility")} class="hover:text-gold">Accessibility</a>
         <a href="https://www.instagram.com/scotts.ballroom/" class="hover:text-gold">Instagram</a>
         <a href="https://www.facebook.com/scottsseafoodballroom" class="hover:text-gold">Facebook</a>
       </div>
