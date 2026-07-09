@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { SITES } from "../lib/sites";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const url = (p: string) => `${base}${p}`;
@@ -106,7 +107,7 @@ const includedImg = `${base}/photos/ballroom-foyer-cocktail.jpg`;
         Scott's Seafood San Jose, our downtown restaurant, offers five private
         dining rooms from a 10-seat Chef's Table up to a 250-guest restaurant buyout.
       </p>
-      <a href="https://squidly-inc.github.io/scotts-mockup/private-dining" class="inline-block border border-gold text-gold text-xs font-semibold uppercase tracking-widest px-8 py-3 hover:bg-gold hover:text-navy-deep transition">
+      <a href={`${SITES.restaurant}/private-dining`} class="inline-block border border-gold text-gold text-xs font-semibold uppercase tracking-widest px-8 py-3 hover:bg-gold hover:text-navy-deep transition">
         Restaurant Private Dining →
       </a>
     </div>

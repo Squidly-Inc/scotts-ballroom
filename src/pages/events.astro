@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { SITES } from "../lib/sites";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const url = (p: string) => `${base}${p}`;
@@ -106,10 +107,10 @@ const facts = [
         Scott's Provisions delivers catering to the venue of your choice.
       </p>
       <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-        <a href="https://squidly-inc.github.io/scotts-mockup/private-dining" class="border border-gold text-gold text-xs font-semibold uppercase tracking-widest px-8 py-3 hover:bg-gold hover:text-navy-deep transition">
+        <a href={`${SITES.restaurant}/private-dining`} class="border border-gold text-gold text-xs font-semibold uppercase tracking-widest px-8 py-3 hover:bg-gold hover:text-navy-deep transition">
           Restaurant Private Dining
         </a>
-        <a href="https://squidly-inc.github.io/scotts-provisions/" class="border border-gold text-gold text-xs font-semibold uppercase tracking-widest px-8 py-3 hover:bg-gold hover:text-navy-deep transition">
+        <a href={`${SITES.provisions}/`} class="border border-gold text-gold text-xs font-semibold uppercase tracking-widest px-8 py-3 hover:bg-gold hover:text-navy-deep transition">
           Off-Site Catering
         </a>
       </div>
