@@ -4,7 +4,8 @@ import Layout from "../layouts/Layout.astro";
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const url = (p: string) => `${base}${p}`;
 
-const heroVideo = "https://video.wixstatic.com/video/11062b_e47a584dab7d466e8d868d3c59d86da4/1080p/mp4/file.mp4";
+const heroVideo = `${base}/videos/ballroom-hero.mp4`;
+const heroPoster = `${base}/videos/ballroom-hero-poster.jpg`;
 
 const eventTypes = [
   {
@@ -66,6 +67,7 @@ const testimonials = [
     <video
       class="absolute inset-0 w-full h-full object-cover"
       src={heroVideo}
+      poster={heroPoster}
       autoplay
       muted
       loop
