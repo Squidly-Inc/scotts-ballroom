@@ -13,11 +13,12 @@ const graph = {
       url: siteURL,
     },
     {
-      "@type": "EventVenue",
+      "@type": ["EventVenue", "LocalBusiness"],
+      "@id": "https://scottsballroom.com/#venue",
       name: "Scott's Ballroom",
       url: siteURL,
       image: abs("/videos/ballroom-hero-poster.jpg"),
-      telephone: "(408) 971-1717",
+      telephone: "+14089711717",
       email: "ballroom@scottshospitality.com",
       address: {
         "@type": "PostalAddress",
@@ -25,12 +26,13 @@ const graph = {
         addressLocality: "San Jose",
         addressRegion: "CA",
         postalCode: "95112",
+        addressCountry: "US",
       },
       maximumAttendeeCapacity: 790,
-      floorSize: {
-        "@type": "QuantitativeValue",
-        value: 7163,
-        unitCode: "FTK",
+      amenityFeature: {
+        "@type": "LocationFeatureSpecification",
+        name: "Event space",
+        value: "7,163 sq ft",
       },
       sameAs: [
         "https://www.instagram.com/scotts.ballroom/",

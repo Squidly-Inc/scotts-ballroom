@@ -12,7 +12,12 @@ export default defineConfig({
     ? 'https://scottsballroom.com'
     : 'https://squidly-inc.github.io',
   base: process.env.DEPLOY_TARGET === 'production' ? '/' : '/scotts-ballroom',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // redirect stubs carry noindex; keep them out of the sitemap
+      filter: (page) => !['/menu/', '/private-dining/', '/reservations/'].some((p) => page.endsWith(p)),
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },
