@@ -1,0 +1,44 @@
+---
+// JSON-LD structured data — facts mirror what is printed on the site.
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const siteURL = new URL(`${base}/`, Astro.site).href;
+const abs = (p: string) => new URL(`${base}${p}`, Astro.site).href;
+
+const graph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: "Scott's Ballroom",
+      url: siteURL,
+    },
+    {
+      "@type": "EventVenue",
+      name: "Scott's Ballroom",
+      url: siteURL,
+      image: abs("/videos/ballroom-hero-poster.jpg"),
+      telephone: "(408) 971-1717",
+      email: "ballroom@scottshospitality.com",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "88 S. 4th Street, 7th Floor",
+        addressLocality: "San Jose",
+        addressRegion: "CA",
+        postalCode: "95112",
+      },
+      maximumAttendeeCapacity: 790,
+      floorSize: {
+        "@type": "QuantitativeValue",
+        value: 7163,
+        unitCode: "FTK",
+      },
+      sameAs: [
+        "https://www.instagram.com/scotts.ballroom/",
+        "https://www.facebook.com/scottsseafoodballroom",
+      ],
+    },
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(graph)} />
